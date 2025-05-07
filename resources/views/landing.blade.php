@@ -9,8 +9,8 @@
     <meta name="keywords" content="">
 
     <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="icon/favicon.ico" rel="icon">
+    <link href="icon/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -46,7 +46,7 @@
                     <li><a href="#services">Program</a></li>
                     <li><a href="#testimonials">Testimoni</a></li>
                     <li><a href="#portfolio">Galleri</a></li>
-                    <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                    <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                         <ul>
                             <li><a href="#">Dropdown 1</a></li>
                             <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
@@ -62,13 +62,13 @@
                             <li><a href="#">Dropdown 3</a></li>
                             <li><a href="#">Dropdown 4</a></li>
                         </ul>
-                    </li>
-                    <li><a href="#contact">Contact</a></li>
+                    </li> -->
+                    <li><a href="#contact">Kontak</a></li>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
 
-            <a class="btn-getstarted" href="#about">Get Started</a>
+            <a class="btn-getstarted" href="/login">Login</a>
 
         </div>
     </header>
@@ -516,100 +516,71 @@
                 <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
 
                     <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-                        <li data-filter="*" class="filter-active">All</li>
-                        <li data-filter=".filter-app">App</li>
-                        <li data-filter=".filter-product">Card</li>
-                        <li data-filter=".filter-branding">Web</li>
-                    </ul><!-- End Portfolio Filters -->
+                        <li data-filter="*" class="filter-active">Semua</li>
+                        <li data-filter=".filter-facilities">Fasilitas</li>
+                        <li data-filter=".filter-study">Pembelajaran</li>
+                        <li data-filter=".filter-ekstra">Ekstrakulikuler</li>
+                    </ul>
+                    <!-- End Portfolio Filters -->
 
                     <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
-                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-                            <img src="assets/img/masonry-portfolio/masonry-portfolio-1.jpg" class="img-fluid" alt="">
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-facilities">
+                            <img src="images/galeri-1.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>App 1</h4>
-                                <p>Lorem ipsum, dolor sit</p>
-                                <a href="assets/img/masonry-portfolio/masonry-portfolio-1.jpg" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <h4>Fasilitas 1</h4>
+                                <p>Gerbang sekolah SMP Al-Irsyad</p>
+                                <a href="images/galeri-1.jpg" title="Tampak depan gerbang sekolah SMP Al-Irsyad." data-gallery="portfolio-gallery-facilities" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                             </div>
                         </div><!-- End Portfolio Item -->
 
-                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-                            <img src="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" class="img-fluid" alt="">
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-study">
+                            <img src="images/galeri-2.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>Product 1</h4>
-                                <p>Lorem ipsum, dolor sit</p>
-                                <a href="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <h4>Kegiatan Pembelajaran 1</h4>
+                                <p>Pembiasaan Sholat Dhuhur Berjama'ah dan Sholat Dhuha</p>
+                                <a href="images/galeri-2.jpg" title="Siswa sedang melaksanakan kegiatan salat berjamaah di dalam masjid." data-gallery="portfolio-gallery-study" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                             </div>
                         </div><!-- End Portfolio Item -->
 
-                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                            <img src="assets/img/masonry-portfolio/masonry-portfolio-3.jpg" class="img-fluid" alt="">
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-study">
+                            <img src="images/galeri-3.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>Branding 1</h4>
-                                <p>Lorem ipsum, dolor sit</p>
-                                <a href="assets/img/masonry-portfolio/masonry-portfolio-3.jpg" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <h4>Kegiatan Pembelajaran 2</h4>
+                                <p>Proses Kegiatan Belajar Mengajar</p>
+                                <a href="images/galeri-3.jpg" title="Siswa sedang mengikuti pembelajaran di kelas dengan presentasi di depan." data-gallery="portfolio-gallery-study" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                             </div>
                         </div><!-- End Portfolio Item -->
 
-                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-                            <img src="assets/img/masonry-portfolio/masonry-portfolio-4.jpg" class="img-fluid" alt="">
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-study">
+                            <img src="images/galeri-4.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>App 2</h4>
-                                <p>Lorem ipsum, dolor sit</p>
-                                <a href="assets/img/masonry-portfolio/masonry-portfolio-4.jpg" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <h4>Kegiatan Pembelajaran 3</h4>
+                                <p>Kegiatan Tahfizhul Qur'an</p>
+                                <a href="images/galeri-4.jpg" title="Siswa dengan melakukan kegiatan Tahfizhul Qur'an." data-gallery="portfolio-gallery-study" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                             </div>
                         </div><!-- End Portfolio Item -->
 
-                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-                            <img src="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" class="img-fluid" alt="">
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-ekstra">
+                            <img src="images/galeri-5.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>Product 2</h4>
-                                <p>Lorem ipsum, dolor sit</p>
-                                <a href="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <h4>Ekstrakulikuler 1</h4>
+                                <p>Kegiatan Out Bound / Pembelajaran di Luar Sekolah</p>
+                                <a href="images/galeri-5.jpg" title="Siswa mengikuti kegiatan outbound." data-gallery="portfolio-gallery-ekstra" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                             </div>
                         </div><!-- End Portfolio Item -->
 
-                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                            <img src="assets/img/masonry-portfolio/masonry-portfolio-6.jpg" class="img-fluid" alt="">
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-facilities">
+                            <img src="images/galeri-6.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>Branding 2</h4>
-                                <p>Lorem ipsum, dolor sit</p>
-                                <a href="assets/img/masonry-portfolio/masonry-portfolio-6.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                            </div>
-                        </div><!-- End Portfolio Item -->
-
-                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-                            <img src="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>App 3</h4>
-                                <p>Lorem ipsum, dolor sit</p>
-                                <a href="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                            </div>
-                        </div><!-- End Portfolio Item -->
-
-                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-                            <img src="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Product 3</h4>
-                                <p>Lorem ipsum, dolor sit</p>
-                                <a href="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                            </div>
-                        </div><!-- End Portfolio Item -->
-
-                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                            <img src="assets/img/masonry-portfolio/masonry-portfolio-9.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Branding 3</h4>
-                                <p>Lorem ipsum, dolor sit</p>
-                                <a href="assets/img/masonry-portfolio/masonry-portfolio-9.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <h4>Fasilitas 2</h4>
+                                <p>Perpustakaan</p>
+                                <a href="images/galeri-6.jpg" title="Ruang perpustakaan sekolah dengan rak buku yang tertata rapi." data-gallery="portfolio-gallery-facilities" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                             </div>
                         </div><!-- End Portfolio Item -->
@@ -627,14 +598,14 @@
 
             <!-- Section Title -->
             <div class="container section-title" data-aos="fade-up">
-                <h2>Contact</h2>
-                <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+                <h2>Kontak</h2>
+                <p>Untuk informasi lebih lanjut mengenai SMP Al-Irsyad Al-Islamiyyah, silakan hubungi kami melalui kontak di bawah ini. Kami siap melayani pertanyaan Anda terkait pendaftaran, kurikulum, kegiatan sekolah, maupun kerja sama.</p>
             </div><!-- End Section Title -->
 
             <div class="container" data-aos="fade-up" data-aos-delay="100">
 
                 <div class="mb-4" data-aos="fade-up" data-aos-delay="200">
-                    <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus" frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d990.2634813879304!2d109.68165235303039!3d-6.884144136872707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70252a487c7ea9%3A0xa8176180918aff48!2sSMP%20Al-Irsyad%20Al-Islamiyah!5e0!3m2!1sid!2sid!4v1746618301687!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div><!-- End Google Maps -->
 
                 <div class="row gy-4">
@@ -643,24 +614,24 @@
                         <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
                             <i class="bi bi-geo-alt flex-shrink-0"></i>
                             <div>
-                                <h3>Address</h3>
-                                <p>A108 Adam Street, New York, NY 535022</p>
+                                <h3>Alamat</h3>
+                                <p>Jl. Terate No.45, Klego, Kec. Pekalongan Tim., Kota Pekalongan, Jawa Tengah 51124</p>
                             </div>
                         </div><!-- End Info Item -->
 
                         <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
                             <i class="bi bi-telephone flex-shrink-0"></i>
                             <div>
-                                <h3>Call Us</h3>
-                                <p>+1 5589 55488 55</p>
+                                <h3>Hubungi Kami</h3>
+                                <p>(0285) 425424 / 0856-1114-019</p>
                             </div>
                         </div><!-- End Info Item -->
 
                         <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
                             <i class="bi bi-envelope flex-shrink-0"></i>
                             <div>
-                                <h3>Email Us</h3>
-                                <p>info@example.com</p>
+                                <h3>Email</h3>
+                                <p>admin@sekolahalirsyadpekalongan.or.id</p>
                             </div>
                         </div><!-- End Info Item -->
 
