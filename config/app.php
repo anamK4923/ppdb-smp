@@ -14,6 +14,9 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
+    'version' => env('APP_VERSION', '1.0.0'),
+    'company_name' => env('APP_COMPANY_NAME', 'My Company'),
+    'company_url' => env('APP_COMPANY_URL', '#'),
 
     /*
     |--------------------------------------------------------------------------
@@ -78,7 +81,8 @@ return [
     |
     */
 
-    'locale' => env('APP_LOCALE', 'en'),
+    // 'locale' => env('APP_LOCALE', 'en'),
+    'locale' => 'id',
 
     'fallback_locale' => env('APP_FALLBACK_LOCALE', 'en'),
 

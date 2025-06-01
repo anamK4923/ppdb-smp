@@ -30,21 +30,36 @@ class RegisteredUserController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'name'          => ['required', 'string', 'max:255'],
+            'email'         => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
+            'password'      => ['required', 'confirmed', Rules\Password::defaults()],
+            'role'          => ['required', 'in:admin,student'],
+            'nisn'          => ['nullable', 'string', 'max:20'],
+            'no_hp'         => ['nullable', 'string', 'max:20'],
+            'asal_sekolah'  => ['nullable', 'string', 'max:255'],
+            'alamat'        => ['nullable', 'string'],
         ]);
 
         $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
+            'name'          => $request->name,
+            'email'         => $request->email,
+            'password'      => Hash::make($request->password),
+            'role'          => $request->role,
+            'nisn'          => $request->nisn,
+            'no_hp'         => $request->no_hp,
+            'asal_sekolah'  => $request->asal_sekolah,
+            'alamat'        => $request->alamat,
         ]);
 
         event(new Registered($user));
 
         Auth::login($user);
 
-        return redirect(route('dashboard', absolute: false));
+        // Redirect sesuai role
+        if ($user->role === 'admin') {
+            return redirect()->route('dashboard.admin');
+        } else {
+            return redirect()->route('dashboard.student');
+        }
     }
 }

@@ -88,7 +88,7 @@
                     </div>
                 </div>
                 <div class="text-center" data-aos="zoom-out" data-aos-delay="100">
-                    <a href="#about" class="btn-get-started">Daftar Sekarang</a>
+                    <a href="#info-ppdb" class="btn-get-started">Daftar Sekarang</a>
                 </div>
 
                 <div class="row gy-4 mt-5 mx-5">
@@ -129,38 +129,44 @@
 
             <!-- Section Title -->
             <div class="container section-title" data-aos="fade-up">
-                <h2>Tentang Sekolah</h2>
-                <p>SMP Al-Irsyad Pekalongan, Sekolah Islam yang Berkomitmen Mencetak Generasi Qur’ani dan Berakhlak Mulia</p>
+                <h2>Tentang Visi & Misi Sekolah</h2>
+                <p>Visi dan Misi SMP Al-Irsyad Pekalongan sebagai pedoman dalam mencetak generasi Qur'ani dan berakhlak mulia.</p>
             </div>
             <!-- End Section Title -->
 
             <div class="container">
-
                 <div class="row gy-4">
 
-                    <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
+                    <div class="col-lg-5 content" data-aos="fade-up" data-aos-delay="100">
+                        <h3>Visi</h3>
                         <p>
-                            SMP Al-Irsyad Pekalongan merupakan sekolah menengah pertama berbasis Islam yang memadukan kurikulum nasional dengan nilai-nilai ajaran agama Islam. Kami berkomitmen mendidik generasi muda yang cerdas, berkarakter, serta beriman dan bertakwa kepada Allah SWT.
+                            “Mencetak Insan yang mandiri, berkualitas, unggul dalam prestasi, beriman, bertaqwa dan berkecakapan hidup serta menguasai teknologi.”
                         </p>
+                    </div>
+
+                    <div class="col-lg-7 content" data-aos="fade-up" data-aos-delay="200">
+                        <h3>Misi</h3>
                         <ul>
-                            <li><i class="bi bi-check2-circle"></i> <span>Pembelajaran terpadu antara ilmu pengetahuan umum dan pendidikan agama Islam.</span></li>
-                            <li><i class="bi bi-check2-circle"></i> <span>Tenaga pendidik profesional dan berakhlak Islami.</span></li>
-                            <li><i class="bi bi-check2-circle"></i> <span>Lingkungan sekolah yang nyaman, aman, dan bernuansa Islami.</span></li>
+                            <li><i class="bi bi-check2-circle"></i> Menanamkan pemahaman dan pengamalan ajaran agama Islam secara benar dan kaffah kepada semua warga sekolah.</li>
+                            <li><i class="bi bi-check2-circle"></i> Melaksanakan pembelajaran dan bimbingan secara efektif sehingga setiap siswa dapat berkembang secara optimal, sesuai dengan potensi yang dimiliki.</li>
+                            <li><i class="bi bi-check2-circle"></i> Menumbuhkan semangat keunggulan secara intensif kepada seluruh warga sekolah.</li>
+                            <li><i class="bi bi-check2-circle"></i> Mendorong dan membantu setiap siswa untuk mengenali potensi dirinya, sehingga dapat berkembang secara optimal.</li>
+                            <li><i class="bi bi-check2-circle"></i> Menumbuh kembangkan kreatifitas siswa di bidang seni, budaya dan olah raga.</li>
+                            <li><i class="bi bi-check2-circle"></i> Meningkatkan mutu pendidikan sesuai dengan tuntutan masyarakat dan perkembangan IPTEK.</li>
+                            <li><i class="bi bi-check2-circle"></i> Meningkatkan prestasi dalam bidang ekstra / intra kurikuler sesuai dengan potensi yang dimiliki siswa.</li>
+                            <li><i class="bi bi-check2-circle"></i> Menerapkan manajemen partisipatif dengan melibatkan seluruh warga sekolah dan kelompok yang terkait dengan sekolah.</li>
+                            <li><i class="bi bi-check2-circle"></i> Mendorong prestasi siswa di bidang akademis maupun non akademis.</li>
+                            <li><i class="bi bi-check2-circle"></i> Memberikan siswa kesempatan untuk berkembang dan membekalinya dengan kecakapan hidup dan teknologi informasi.</li>
+                            <li><i class="bi bi-check2-circle"></i> Meningkatkan kompetensi pendidik dan tenaga kependidikan melalui peningkatan keprofesian berkelanjutan.</li>
                         </ul>
                     </div>
 
-                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-                        <p>
-                            Melalui berbagai program unggulan seperti Tahfidz Al-Qur’an, pembinaan akhlak, serta kegiatan ekstrakurikuler Islami, SMP Al-Irsyad berupaya membentuk peserta didik yang tidak hanya unggul secara akademis, tetapi juga memiliki kepribadian Islami yang kuat dan siap menghadapi tantangan zaman dengan iman dan ilmu.
-                        </p>
-                        <a href="#" class="read-more"><span>Selengkapnya</span><i class="bi bi-arrow-right"></i></a>
-                    </div>
-
                 </div>
-
             </div>
 
-        </section><!-- /About Section -->
+        </section>
+
+        <!-- /About Section -->
 
         <!-- Stats Section -->
         <!-- <section id="stats" class="stats section light-background">
@@ -593,6 +599,51 @@
 
         </section><!-- /Portfolio Section -->
 
+        <section id="info-ppdb" class="info-ppdb section">
+            <div class="container" data-aos="fade-up">
+                <!-- Section Title -->
+                <div class="section-title">
+                    <h2>Info PPDB</h2>
+                    <p>Informasi terbaru seputar Penerimaan Peserta Didik Baru SMP Al-Irsyad Pekalongan.</p>
+                </div>
+
+                <!-- Banner PPDB -->
+                <div class="banner-ppdb mb-4">
+                    <img src="images/banner-ppdb.png" class="img-fluid rounded shadow" alt="Banner PPDB">
+                </div>
+
+                <!-- Tombol Daftar -->
+                <div class="text-center mb-5">
+                    <a href="/login-ppdb" class="btn btn-primary px-4 py-2 shadow">
+                        🎓 Daftar Sekarang
+                    </a>
+                </div>
+
+                <!-- List Pengumuman -->
+                <div class="row gy-4">
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="pengumuman-item p-3 border rounded shadow-sm h-100">
+                            <h4>📢 Pendaftaran Gelombang 1 Dibuka</h4>
+                            <p>Pendaftaran siswa baru gelombang pertama dibuka mulai 1 Juni hingga 30 Juni 2025. Segera daftarkan diri Anda!</p>
+                            <small class="text-muted">Dipublikasikan: 8 Mei 2025</small>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="pengumuman-item p-3 border rounded shadow-sm h-100">
+                            <h4>📢 Persyaratan Pendaftaran 2025</h4>
+                            <p>Calon peserta wajib membawa fotokopi KK, Akta Kelahiran, serta pas foto ukuran 3x4 sebanyak 3 lembar.</p>
+                            <small class="text-muted">Dipublikasikan: 5 Mei 2025</small>
+                        </div>
+                    </div>
+
+                    <!-- Tambahkan pengumuman lainnya di sini -->
+
+                </div>
+            </div>
+        </section>
+
+
         <!-- Contact Section -->
         <section id="contact" class="contact section">
 
@@ -615,7 +666,7 @@
                             <i class="bi bi-geo-alt flex-shrink-0"></i>
                             <div>
                                 <h3>Alamat</h3>
-                                <p>Jl. Terate No.45, Klego, Kec. Pekalongan Tim., Kota Pekalongan, Jawa Tengah 51124</p>
+                                <p>Jl. Terate No.45, Klego, Kec. Pekalongan Timur, Kota Pekalongan, Jawa Tengah 51124</p>
                             </div>
                         </div><!-- End Info Item -->
 
@@ -683,30 +734,30 @@
             <div class="row gy-4">
                 <div class="col-lg-5 col-md-12 footer-about">
                     <a href="index.html" class="logo d-flex align-items-center">
-                        <span class="sitename">OnePage</span>
+                        <span class="sitename">SMP Al-Irsyad</span>
                     </a>
-                    <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+                    <p>SMP Al-Irsyad Pekalongan, Sekolah Islam yang Berkomitmen Mencetak Generasi Qur’ani dan Berakhlak Mulia.</p>
                     <div class="social-links d-flex mt-4">
-                        <a href=""><i class="bi bi-twitter-x"></i></a>
-                        <a href=""><i class="bi bi-facebook"></i></a>
-                        <a href=""><i class="bi bi-instagram"></i></a>
-                        <a href=""><i class="bi bi-linkedin"></i></a>
+                        <!-- <a href=""><i class="bi bi-twitter-x"></i></a> -->
+                        <!-- <a href=""><i class="bi bi-facebook"></i></a> -->
+                        <a href="https://www.instagram.com/smpalirsyadpekalongan/"><i class="bi bi-instagram"></i></a>
+                        <!-- <a href=""><i class="bi bi-linkedin"></i></a> -->
                     </div>
                 </div>
 
-                <div class="col-lg-2 col-6 footer-links">
-                    <h4>Useful Links</h4>
+                <div class="col-lg-3 col-6 footer-links">
+                    <h4>Link Yang Berguna</h4>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Terms of service</a></li>
-                        <li><a href="#">Privacy policy</a></li>
+                        <li><a href="#hero">Beranda</a></li>
+                        <li><a href="#about">Tentang</a></li>
+                        <li><a href="#services">Program</a></li>
+                        <li><a href="#portfolio">Galleri</a></li>
+                        <li><a href="#contact">Kontak</a></li>
                     </ul>
                 </div>
 
-                <div class="col-lg-2 col-6 footer-links">
-                    <h4>Our Services</h4>
+                <!-- <div class="col-lg-2 col-6 footer-links">
+                    <h4>Program Kami</h4>
                     <ul>
                         <li><a href="#">Web Design</a></li>
                         <li><a href="#">Web Development</a></li>
@@ -714,28 +765,25 @@
                         <li><a href="#">Marketing</a></li>
                         <li><a href="#">Graphic Design</a></li>
                     </ul>
-                </div>
+                </div> -->
 
-                <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-                    <h4>Contact Us</h4>
-                    <p>A108 Adam Street</p>
-                    <p>New York, NY 535022</p>
-                    <p>United States</p>
-                    <p class="mt-4"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-                    <p><strong>Email:</strong> <span>info@example.com</span></p>
+                <div class="col-lg-4 col-md-12 footer-contact text-center text-md-start">
+                    <h4>Hubungi Kami</h4>
+                    <p>Jl. Terate No.45, Klego</p>
+                    <p>Kec. Pekalongan Timur, Kota Pekalongan, Jawa Tengah 51124</p>
+                    <p>Indonesia</p>
+                    <p class="mt-4"><strong>Phone:</strong> <span>(0285) 425424</span></p>
+                    <p><strong>WhatsApp:</strong> <span>0856-1114-019</span></p>
+                    <p><strong>Email:</strong> <span>admin@sekolahalirsyadpekalongan.or.id</span></p>
                 </div>
 
             </div>
         </div>
 
         <div class="container copyright text-center mt-4">
-            <p>© <span>Copyright</span> <strong class="px-1 sitename">OnePage</strong> <span>All Rights Reserved</span></p>
+            <p>© <span>Copyright</span> <strong class="px-1 sitename">SMP Al-Irsyad</strong> <span>All Rights Reserved</span></p>
             <div class="credits">
-                <!-- All the links in the footer should remain intact. -->
-                <!-- You can delete the links only if you've purchased the pro version. -->
-                <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                Designed by <a href="">Aeruuu</a>
             </div>
         </div>
 

@@ -58,8 +58,8 @@
 
 @push('css')
 <style type="text/css">
-    /* {{-- You can add AdminLTE customizations here --}} */
     /*
+    {{-- You can add AdminLTE customizations here --}}
 .card-header {
 border-bottom: none;
 }
