@@ -343,78 +343,35 @@ return [
             'can' => 'admin-only',
         ],
         [
-            'text' => 'pages',
-            'url' => 'admin/pages',
-            'icon' => 'far fa-fw fa-file',
-            'label' => 4,
-            'label_color' => 'success',
-            // 'can' => 'student-only',
-        ],
-        ['header' => 'account_settings'],
-        [
-            'text' => 'profile',
-            'url' => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
+            'text' => 'Kelola Data Pendaftar',
+            'url' => 'admin/data-pendaftar',
+            'icon' => 'fas fa-users',
+            'can' => 'admin-only',
         ],
         [
-            'text' => 'change_password',
-            'url' => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'text' => 'Kelola Jadwal dan Pengumuman',
+            'url' => 'admin/jadwal-pengumuman',
+            'icon' => 'fas fa-calendar-alt',
+            'can' => 'admin-only',
+        ],
+        ['header' => 'Data Pendaftar', 'can' => 'student-only'],
+        [
+            'text' => 'Formulir Pendaftaran',
+            'url' => 'student/formulir-pendaftaran',
+            'icon' => 'fas fa-edit',
+            'can' => 'student-only',
         ],
         [
-            'text' => 'multilevel',
-            'icon' => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url' => '#',
-                ],
-                [
-                    'text' => 'level_one',
-                    'url' => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url' => '#',
-                        ],
-                        [
-                            'text' => 'level_two',
-                            'url' => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url' => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url' => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url' => '#',
-                ],
-            ],
-        ],
-        ['header' => 'labels'],
-        [
-            'text' => 'important',
-            'icon' => 'fas fa-fw fa-user',
-            'icon_color' => 'red',
-            'url' => '#',
+            'text' => 'Status Pendaftaran',
+            'url' => 'student/status-pendaftaran',
+            'icon' => 'fas fa-check',
+            'can' => 'student-only',
         ],
         [
-            'text' => 'warning',
-            'icon_color' => 'yellow',
-            'url' => '#',
-        ],
-        [
-            'text' => 'information',
-            'icon_color' => 'cyan',
-            'url' => '#',
+            'text' => 'Pengumuman Hasil Seleksi',
+            'url' => 'student/pengumuman-hasil-seleksi',
+            'icon' => 'fas fa-bullhorn',
+            'can' => 'student-only',
         ],
     ],
 

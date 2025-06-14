@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DataPendaftarController;
+use App\Http\Controllers\FormulirController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\NotificationsController;
 use App\Http\Controllers\ProfileController;
@@ -10,10 +12,12 @@ Route::get('/', [LandingController::class, 'index'])->name('landing');
 
 Route::middleware(['admin'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'indexAdmin'])->name('dashboard.admin');
+    Route::get('/admin/data-pendaftar', [DataPendaftarController::class, 'index'])->name('admin.data-pendaftar');
 });
 
 Route::middleware(['student'])->group(function () {
     Route::get('/dashboard-student', [DashboardController::class, 'indexStudent'])->name('dashboard.student');
+    Route::get('/student/formulir-pendaftaran', [FormulirController::class, 'index'])->name('formulir.student');
 });
 
 Route::get(
