@@ -16,16 +16,12 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
+            $table->string('username');
             $table->string('password');
 
             // Role: admin atau student
             $table->enum('role', ['admin', 'student'])->default('student');
-
-            // Data tambahan untuk calon siswa
-            $table->string('nisn')->nullable();       // Nomor Induk Siswa Nasional
-            $table->string('no_hp')->nullable();      // No HP calon siswa
-            $table->string('asal_sekolah')->nullable(); // Asal sekolah
-            $table->string('alamat')->nullable();     // Alamat lengkap
+            $table->string('profile_image')->nullable();
 
             $table->boolean('dark_mode')->default(false);
             $table->rememberToken();

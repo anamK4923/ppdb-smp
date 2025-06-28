@@ -6,7 +6,7 @@ use Illuminate\View\View;
 
 class DashboardController extends Controller
 {
-    public function indexAdmin(): View
+    public function admin(): View
     {
         // Data dummy
         $data = [
@@ -26,7 +26,7 @@ class DashboardController extends Controller
         return view('dashboard.dashboard-admin', $data);
     }
 
-    public function indexStudent(): View
+    public function student(): View
     {
         return view('dashboard.dashboard-student');
     }

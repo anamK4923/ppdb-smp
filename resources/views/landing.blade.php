@@ -614,7 +614,7 @@
 
                 <!-- Tombol Daftar -->
                 <div class="text-center mb-5">
-                    <a href="/login-ppdb" class="btn btn-primary px-4 py-2 shadow">
+                    <a href="/login" class="btn btn-primary px-4 py-2 shadow">
                         🎓 Daftar Sekarang
                     </a>
                 </div>

@@ -32,34 +32,29 @@ class RegisteredUserController extends Controller
         $request->validate([
             'name'          => ['required', 'string', 'max:255'],
             'email'         => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
+            'username'      => ['required', 'string', 'max:255', 'unique:' . User::class],
             'password'      => ['required', 'confirmed', Rules\Password::defaults()],
-            'role'          => ['required', 'in:admin,student'],
-            'nisn'          => ['nullable', 'string', 'max:20'],
-            'no_hp'         => ['nullable', 'string', 'max:20'],
-            'asal_sekolah'  => ['nullable', 'string', 'max:255'],
-            'alamat'        => ['nullable', 'string'],
+            // 'role'          => ['required', 'in:admin,student'],
         ]);
 
         $user = User::create([
             'name'          => $request->name,
             'email'         => $request->email,
+            'username'      => $request->username,
             'password'      => Hash::make($request->password),
-            'role'          => $request->role,
-            'nisn'          => $request->nisn,
-            'no_hp'         => $request->no_hp,
-            'asal_sekolah'  => $request->asal_sekolah,
-            'alamat'        => $request->alamat,
+            'role'          => "student",
         ]);
 
         event(new Registered($user));
 
         Auth::login($user);
 
-        // Redirect sesuai role
         if ($user->role === 'admin') {
-            return redirect()->route('dashboard.admin');
-        } else {
-            return redirect()->route('dashboard.student');
+            return redirect()->route('admin.dashboard');
+        } elseif ($user->role === 'student') {
+            return redirect()->route('student.dashboard');
         }
+
+        return redirect('/')->with('error', 'Role tidak dikenali');
     }
 }

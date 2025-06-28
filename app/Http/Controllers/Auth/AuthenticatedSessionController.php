@@ -31,13 +31,13 @@ class AuthenticatedSessionController extends Controller
         $user = Auth::user();
 
         if ($user->role === 'admin') {
-            return redirect('/dashboard');
+            return redirect()->route('admin.dashboard');
         } elseif ($user->role === 'student') {
-            return redirect('/dashboard-student');
+            return redirect()->route('student.dashboard');
         }
 
         // fallback kalau role lain atau belum ditentukan
-        return redirect('/');
+        return redirect('/')->with('error', 'Role tidak dikenali');
 
         // return redirect()->intended(route('dashboard', absolute: false));
     }

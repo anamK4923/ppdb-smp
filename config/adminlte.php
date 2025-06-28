@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'Admin',
+    'title' => 'PPDB SMP Al-Irsyad',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -68,7 +68,7 @@ return [
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'Admin Logo',
+    'logo_img_alt' => 'PPDB Logo',
 
     /*
     |--------------------------------------------------------------------------
@@ -114,7 +114,7 @@ return [
         'mode' => 'fullscreen',
         'img' => [
             'path' => 'icon/apple-touch-icon.png',
-            'alt' => 'AdminLTE Preloader Image',
+            'alt' => 'PPDB Preloader',
             'effect' => 'animation__shake',
             'width' => 60,
             'height' => 60,
@@ -196,7 +196,7 @@ return [
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
-    'classes_sidebar' => 'sidebar-dark-primary elevation-4',
+    'classes_sidebar' => 'sidebar-light-success elevation-1',
     'classes_sidebar_nav' => '',
     'classes_topnav' => 'navbar-white navbar-light',
     'classes_topnav_nav' => 'navbar-expand',
@@ -300,29 +300,20 @@ return [
 
     'menu' => [
         // Navbar items:
-        // [
-        //     'type' => 'navbar-search',
-        //     'text' => 'search',
-        //     'topnav_right' => false,
-        // ],
-        // [
-        //     'type' => 'darkmode-widget',
-        //     'topnav_right' => true,     // Or "topnav => true" to place on the left.
-        // ],
         [
             'type' => 'navbar-notification',
-            'id' => 'my-notification',                // An ID attribute (required).
-            'icon' => 'fas fa-bell',                  // A font awesome icon (required).
-            'icon_color' => 'warning',                // The initial icon color (optional).
-            'label' => 0,                             // The initial label for the badge (optional).
-            'label_color' => 'danger',                // The initial badge color (optional).
-            'url' => 'notifications/show',            // The url to access all notifications/elements (required).
-            'topnav_right' => true,                   // Or "topnav => true" to place on the left (required).
-            'dropdown_mode' => true,                  // Enables the dropdown mode (optional).
-            'dropdown_flabel' => 'All notifications', // The label for the dropdown footer link (optional).
+            'id' => 'my-notification',
+            'icon' => 'fas fa-bell',
+            'icon_color' => 'warning',
+            'label' => 0,
+            'label_color' => 'danger',
+            'url' => 'notifications/show',
+            'topnav_right' => true,
+            'dropdown_mode' => true,
+            'dropdown_flabel' => 'Semua Notifikasi',
             'update_cfg' => [
-                'url' => 'notifications/get',         // The url to periodically fetch new data (optional).
-                'period' => 30,                       // The update period for get new data (in seconds, optional).
+                'url' => 'notifications/get',
+                'period' => 30,
             ],
         ],
         [
@@ -330,49 +321,175 @@ return [
             'topnav_right' => false,
         ],
 
-        // Sidebar items:
-        // [
-        //     'type' => 'sidebar-menu-search',
-        //     'text' => 'search',
-        // ],
+        // ========================================
+        // MENU ADMIN
+        // ========================================
+        ['header' => 'MENU ADMIN', 'can' => 'admin-only'],
+
+        // Dashboard Admin
         [
             'text' => 'Dashboard',
-            // 'url' => 'admin/blog',
             'icon' => 'fas fa-tachometer-alt',
-            'route' => 'dashboard.admin',
+            'route' => 'admin.dashboard',
             'can' => 'admin-only',
         ],
+
+        // Kelola Data Pendaftar
         [
             'text' => 'Kelola Data Pendaftar',
-            'url' => 'admin/data-pendaftar',
             'icon' => 'fas fa-users',
+            'url' => 'admin/pendaftar',
             'can' => 'admin-only',
         ],
+
+        // Kelola Hasil Pengumuman
         [
-            'text' => 'Kelola Jadwal dan Pengumuman',
-            'url' => 'admin/jadwal-pengumuman',
-            'icon' => 'fas fa-calendar-alt',
-            'can' => 'admin-only',
-        ],
-        ['header' => 'Data Pendaftar', 'can' => 'student-only'],
-        [
-            'text' => 'Formulir Pendaftaran',
-            'url' => 'student/formulir-pendaftaran',
-            'icon' => 'fas fa-edit',
-            'can' => 'student-only',
-        ],
-        [
-            'text' => 'Status Pendaftaran',
-            'url' => 'student/status-pendaftaran',
-            'icon' => 'fas fa-check',
-            'can' => 'student-only',
-        ],
-        [
-            'text' => 'Pengumuman Hasil Seleksi',
-            'url' => 'student/pengumuman-hasil-seleksi',
+            'text' => 'Kelola Hasil Pengumuman',
             'icon' => 'fas fa-bullhorn',
+            'url' => 'admin/pengumuman',
+            'can' => 'admin-only',
+        ],
+
+        // Jadwal & Timeline PPDB
+        [
+            'text' => 'Jadwal & Timeline PPDB',
+            'icon' => 'fas fa-calendar-alt',
+            'url' => 'admin/jadwal',
+            'can' => 'admin-only',
+        ],
+
+        // Laporan & Statistik
+        [
+            'text' => 'Laporan & Statistik',
+            'icon' => 'fas fa-chart-bar',
+            'submenu' => [
+                [
+                    'text' => 'Export Data Pendaftar',
+                    'icon' => 'fas fa-download',
+                    'url' => 'admin/export',
+                ],
+                [
+                    'text' => 'Log Aktivitas',
+                    'icon' => 'fas fa-history',
+                    'url' => 'admin/log-aktivitas',
+                ],
+                [
+                    'text' => 'Statistik Pendaftaran',
+                    'icon' => 'fas fa-chart-pie',
+                    'url' => 'admin/statistik',
+                ],
+            ],
+            'can' => 'admin-only',
+        ],
+
+        // Pengaturan Sistem
+        [
+            'text' => 'Pengaturan Sistem',
+            'icon' => 'fas fa-cogs',
+            'submenu' => [
+                [
+                    'text' => 'Kelola User Admin',
+                    'icon' => 'fas fa-user-shield',
+                    'url' => 'admin/user',
+                ],
+                [
+                    'text' => 'Konfigurasi PPDB',
+                    'icon' => 'fas fa-sliders-h',
+                    'url' => 'admin/konfigurasi',
+                ],
+                [
+                    'text' => 'Backup Data',
+                    'icon' => 'fas fa-database',
+                    'url' => 'admin/backup',
+                ],
+            ],
+            'can' => 'admin-only',
+        ],
+
+        // ========================================
+        // MENU SISWA/STUDENT
+        // ========================================
+        ['header' => 'MENU SISWA', 'can' => 'student-only'],
+
+        // Dashboard Siswa
+        [
+            'text' => 'Dashboard',
+            'icon' => 'fas fa-home',
+            'route' => 'student.dashboard',
             'can' => 'student-only',
         ],
+
+        // Kelola Formulir Pendaftaran
+        [
+            'text' => 'Kelola Pendaftaran',
+            'icon' => 'fas fa-file-download',
+            'submenu' => [
+                [
+                    'text' => 'Lengkapi Data Pendaftaran',
+                    'icon' => 'fas fa-edit',
+                    'url' => 'student/pendaftaran',
+                ],
+                [
+                    'text' => 'Status & Progress',
+                    'icon' => 'fas fa-tasks',
+                    'url' => 'student/status',
+                    'can' => 'student-only',
+                ],
+            ],
+            'can' => 'student-only',
+        ],
+
+        // Info & Pengumuman
+        [
+            'text' => 'Info & Pengumuman',
+            'icon' => 'fas fa-info-circle',
+            'url' => 'student/pengumuman',
+            'can' => 'student-only',
+        ],
+
+        // Unduh Dokumen
+        // [
+        //     'text' => 'Unduh Dokumen',
+        //     'icon' => 'fas fa-file-download',
+        //     'submenu' => [
+        //         [
+        //             'text' => 'Bukti Pendaftaran',
+        //             'icon' => 'fas fa-receipt',
+        //             'url' => 'student/dokumen/bukti-pendaftaran',
+        //         ],
+        //         [
+        //             'text' => 'Kartu Ujian',
+        //             'icon' => 'fas fa-id-card',
+        //             'url' => 'student/dokumen/kartu-ujian',
+        //         ],
+        //         [
+        //             'text' => 'Hasil Seleksi',
+        //             'icon' => 'fas fa-certificate',
+        //             'url' => 'student/dokumen/hasil-seleksi',
+        //         ],
+        //     ],
+        //     'can' => 'student-only',
+        // ],
+
+        // ========================================
+        // MENU UMUM
+        // ========================================
+        // ['header' => 'AKUN'],
+
+        // // Profile
+        // [
+        //     'text' => 'Profile',
+        //     'icon' => 'fas fa-user',
+        //     'url' => 'profile',
+        // ],
+
+        // // Logout
+        // [
+        //     'text' => 'Logout',
+        //     'icon' => 'fas fa-sign-out-alt',
+        //     'url' => 'logout',
+        //     'method' => 'post',
+        // ],
     ],
 
     /*
@@ -456,12 +573,12 @@ return [
             ],
         ],
         'Sweetalert2' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
                     'asset' => false,
-                    'location' => '//cdn.jsdelivr.net/npm/sweetalert2@8',
+                    'location' => '//cdn.jsdelivr.net/npm/sweetalert2@11',
                 ],
             ],
         ],

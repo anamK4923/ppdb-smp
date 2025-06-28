@@ -18,12 +18,10 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'username',
         'password',
         'role',
-        'nisn',
-        'no_hp',
-        'asal_sekolah',
-        'alamat',
+        'profile_image',
     ];
 
     /**
@@ -52,16 +50,35 @@ class User extends Authenticatable
 
     public function getProfileImageAttribute()
     {
-        // Kalau kamu pakai column foto di table users
-        if ($this->foto) {
-            return asset('storage/profile/' . $this->foto);
+        $profileImage = $this->attributes['profile_image'] ?? null;
+
+        if ($profileImage) {
+            return asset('storage/' . $profileImage);
         }
-        // default avatar
+
         return asset('images/ame.jpg');
     }
 
     public function adminlte_image()
     {
         return $this->profile_image;
+    }
+
+    // Relasi ke Pendaftaran
+    public function pendaftaran()
+    {
+        return $this->hasOne(Pendaftaran::class);
+    }
+
+    // Relasi ke Pengumuman
+    public function pengumuman()
+    {
+        return $this->hasMany(Pengumuman::class);
+    }
+
+    // Relasi ke Berkas Pendaftaran
+    public function berkasPendaftaran()
+    {
+        return $this->hasOne(BerkasPendaftaran::class, 'id_user', 'id');
     }
 }

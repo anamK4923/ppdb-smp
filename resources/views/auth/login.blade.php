@@ -12,7 +12,7 @@
 
         <!-- Email -->
         <div>
-            <input id="email" name="email" type="text" :value="old('email')" required autofocus autocomplete="username"
+            <input id="email" name="email" type="text" :value="old('email')" required autofocus autocomplete="email"
                 placeholder="Email atau Username"
                 class="w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white px-4 py-2 mt-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none" />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
