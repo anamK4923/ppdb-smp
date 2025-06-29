@@ -30,7 +30,7 @@ return [
     |
     */
 
-    'use_ico_only' => false,
+    'use_ico_only' => true,
     'use_full_favicon' => false,
 
     /*
@@ -351,7 +351,7 @@ return [
         ],
 
         [
-            'text' => 'Kelola User Admin',
+            'text' => 'Kelola User',
             'icon' => 'fas fa-user-shield',
             'url' => 'admin/users',
             'can' => 'admin-only',

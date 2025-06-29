@@ -224,18 +224,18 @@
                                 </button>
 
                                 <!-- Tombol Cetak PDF -->
-                                <a href="{{ route('admin.pendaftar.cetak', $pendaftar->id) }}"
+                                <!-- <a href="{{ route('admin.pendaftar.cetak', $pendaftar->id) }}"
                                     class="btn btn-success btn-sm"
                                     target="_blank" title="Cetak PDF">
                                     <i class="fas fa-file-pdf"></i>
-                                </a>
+                                </a> -->
 
                                 <!-- Tombol Hapus -->
-                                <button type="button" class="btn btn-danger btn-sm"
+                                <!-- <button type="button" class="btn btn-danger btn-sm"
                                     onclick="confirmDelete('{{ $pendaftar->id }}')"
                                     title="Hapus">
                                     <i class="fas fa-trash"></i>
-                                </button>
+                                </button> -->
                             </div>
                         </td>
                     </tr>
@@ -264,11 +264,11 @@
                                             </select>
                                         </div>
 
-                                        <div class="form-group">
+                                        <!-- <div class="form-group">
                                             <label>Catatan</label>
                                             <textarea name="catatan" class="form-control" rows="3"
                                                 placeholder="Catatan verifikasi (opsional)"></textarea>
-                                        </div>
+                                        </div> -->
 
                                         <div class="alert alert-info">
                                             <i class="fas fa-info-circle"></i>

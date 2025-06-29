@@ -265,13 +265,13 @@
                                 </button>
 
                                 <!-- Tombol Hapus Pengumuman -->
-                                @if(isset($pengumumans[$pendaftar->user_id]))
+                                <!-- @if(isset($pengumumans[$pendaftar->user_id]))
                                 <button type="button" class="btn btn-danger btn-sm"
                                     onclick="confirmDelete('{{ $pendaftar->id }}')"
                                     title="Hapus Pengumuman">
                                     <i class="fas fa-trash"></i>
                                 </button>
-                                @endif
+                                @endif -->
                             </div>
                         </td>
                     </tr>

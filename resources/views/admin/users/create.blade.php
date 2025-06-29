@@ -27,9 +27,30 @@
             </a>
         </div>
     </div>
-    <form action="{{ route('admin.users.store') }}" method="POST">
+    <form action="{{ route('admin.users.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="card-body">
+            <!-- Profile Image -->
+            <div class="form-group text-center">
+                <label>Foto Profile</label>
+                <div class="mb-3">
+                    <img id="profile-preview"
+                        src="{{ asset('images/avatar-default.png') }}"
+                        alt="Profile Image"
+                        class="img-circle elevation-2"
+                        style="width: 120px; height: 120px; object-fit: cover;">
+                </div>
+                <div class="custom-file" style="max-width: 300px; margin: 0 auto;">
+                    <input type="file" class="custom-file-input @error('image') is-invalid @enderror"
+                        id="image" name="image" accept="image/*" onchange="previewImage(this)">
+                    <label class="custom-file-label" for="image">Pilih foto...</label>
+                    @error('image')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+                <small class="text-muted">Format: JPG, PNG, GIF. Maksimal 2MB.</small>
+            </div>
+
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
@@ -109,3 +130,22 @@
     </form>
 </div>
 @stop
+
+@section('js')
+<script>
+    function previewImage(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                $('#profile-preview').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+
+            // Update label
+            var fileName = input.files[0].name;
+            $(input).next('.custom-file-label').html(fileName);
+        }
+    }
+</script>

@@ -253,7 +253,7 @@
                         </select>
                     </div>
 
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label>Status Seleksi</label>
                         <select name="status_seleksi" class="form-control">
                             <option value="">-- Pilih Status --</option>
@@ -267,7 +267,7 @@
                                 Belum Diumumkan
                             </option>
                         </select>
-                    </div>
+                    </div> -->
 
                     <!-- <div class="form-group">
                         <label>Catatan</label>

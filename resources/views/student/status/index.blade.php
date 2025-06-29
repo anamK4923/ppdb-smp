@@ -16,7 +16,7 @@
                 <h5 class="widget-user-desc">Calon Siswa SMP Al-Irsyad</h5>
             </div>
             <div class="widget-user-image">
-                <img class="img-circle elevation-2" src="{{ $user->profile_image ?  $user->profile_image: asset('images/ame.jpg') }}" alt="User Avatar">
+                <img class="img-circle elevation-2" src="{{ $user->profile_image ?  $user->profile_image: asset('images/avatar-default.png') }}" alt="User Avatar">
             </div>
             <div class="card-footer">
                 <div class="row">
@@ -63,12 +63,12 @@
                 <a href="{{ route('student.pendaftaran.index') }}" class="btn btn-primary btn-block mb-2">
                     <i class="fas fa-edit"></i> Lengkapi Data Pendaftaran
                 </a>
-                <button class="btn btn-info btn-block mb-2" onclick="showComingSoon()">
+                <!-- <button class="btn btn-info btn-block mb-2" onclick="showComingSoon()">
                     <i class="fas fa-download"></i> Download Bukti Pendaftaran
                 </button>
                 <button class="btn btn-warning btn-block" onclick="showComingSoon()">
                     <i class="fas fa-print"></i> Cetak Kartu Ujian
-                </button>
+                </button> -->
             </div>
         </div>
     </div>

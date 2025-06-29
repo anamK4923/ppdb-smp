@@ -47,14 +47,16 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
 
-        Auth::login($user);
 
-        if ($user->role === 'admin') {
-            return redirect()->route('admin.dashboard');
-        } elseif ($user->role === 'student') {
-            return redirect()->route('student.dashboard');
-        }
 
-        return redirect('/')->with('error', 'Role tidak dikenali');
+        // Auth::login($user);
+
+        // if ($user->role === 'admin') {
+        //     return redirect()->route('admin.dashboard');
+        // } elseif ($user->role === 'student') {
+        //     return redirect()->route('student.dashboard');
+        // }
+
+        return redirect('/login')->with('success', 'Berhasil membuat akun');
     }
 }

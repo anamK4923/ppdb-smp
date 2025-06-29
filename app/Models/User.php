@@ -56,7 +56,7 @@ class User extends Authenticatable
             return asset('storage/' . $profileImage);
         }
 
-        return asset('images/ame.jpg');
+        return asset('images/avatar-default.png');
     }
 
     public function adminlte_image()

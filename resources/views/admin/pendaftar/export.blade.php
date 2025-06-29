@@ -292,6 +292,7 @@
     <div class="signature">
         <div class="signature-box">
             <p>Admin PPDB</p>
+            <!-- <img src="{{ asset('images/ttd.png') }}" class="w-16 h-16" alt="TTD"> -->
             <div class="signature-line"></div>
             <p><strong>{{ $admin }}</strong></p>
             <p>SMP Al-Irsyad</p>

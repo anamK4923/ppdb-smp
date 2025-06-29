@@ -65,7 +65,16 @@ class UserController extends Controller
             'username' => ['required', 'string', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'role' => ['required', 'in:admin,student'],
+            'image' => ['nullable', 'image', 'mimetypes:image/jpeg,image/png,image/gif', 'max:2048'],
         ]);
+
+        $imagePath = null;
+
+        // Handle image upload
+        if ($request->hasFile('image')) {
+            // Store new image
+            $imagePath = $request->file('image')->store('dokumen', 'public');
+        }
 
         User::create([
             'name' => $request->name,
@@ -74,6 +83,7 @@ class UserController extends Controller
             'password' => Hash::make($request->password),
             'role' => $request->role,
             'email_verified_at' => now(), // Auto verify untuk admin
+            'profile_image' => $imagePath, // simpan path image
         ]);
 
         return redirect()->route('admin.users.index')
@@ -104,13 +114,23 @@ class UserController extends Controller
             'username' => ['required', 'string', 'max:255', 'unique:users,username,' . $user->id],
             'password' => ['nullable', 'confirmed', Rules\Password::defaults()],
             'role' => ['required', 'in:admin,student'],
+            'image' => ['nullable', 'image', 'mimetypes:image/jpeg,image/png,image/gif', 'max:2048'],
         ]);
+
+        $imagePath = null;
+
+        // Handle image upload
+        if ($request->hasFile('image')) {
+            // Store new image
+            $imagePath = $request->file('image')->store('dokumen', 'public');
+        }
 
         $data = [
             'name' => $request->name,
             'email' => $request->email,
             'username' => $request->username,
             'role' => $request->role,
+            'profile_image' => $imagePath,
         ];
 
         // Update password jika diisi

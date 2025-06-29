@@ -142,7 +142,7 @@
                     <th>Email</th>
                     <th>Username</th>
                     <th>Role</th>
-                    <th>Status</th>
+                    <!-- <th>Status</th> -->
                     <th>Terdaftar</th>
                     <th>Aksi</th>
                 </tr>
@@ -164,13 +164,13 @@
                         <span class="badge badge-info">Student</span>
                         @endif
                     </td>
-                    <td>
+                    <!-- <td>
                         @if($user->email_verified_at)
                         <span class="badge badge-success">Aktif</span>
                         @else
                         <span class="badge badge-danger">Nonaktif</span>
                         @endif
-                    </td>
+                    </td> -->
                     <td>{{ $user->created_at->format('d/m/Y H:i') }}</td>
                     <td>
                         <div class="btn-group">
@@ -180,15 +180,15 @@
                             <a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-warning btn-sm" title="Edit">
                                 <i class="fas fa-edit"></i>
                             </a>
-                            <form action="{{ route('admin.users.toggle-status', $user->id) }}" method="POST" style="display: inline;">
+                            <!-- <form action="{{ route('admin.users.toggle-status', $user->id) }}" method="POST" style="display: inline;">
                                 @csrf
                                 @method('PATCH')
                                 <button type="submit" class="btn btn-{{ $user->email_verified_at ? 'secondary' : 'success' }} btn-sm"
                                     title="{{ $user->email_verified_at ? 'Nonaktifkan' : 'Aktifkan' }}">
                                     <i class="fas fa-{{ $user->email_verified_at ? 'ban' : 'check' }}"></i>
                                 </button>
-                            </form>
-                            @if($user->id !== auth()->id())
+                            </form> -->
+                            @if($user->id !== auth()->id() && $user->role === 'admin')
                             <button type="button" class="btn btn-danger btn-sm" onclick="confirmDelete('{{ $user->id }}', '{{ $user->name }}')" title="Hapus">
                                 <i class="fas fa-trash"></i>
                             </button>

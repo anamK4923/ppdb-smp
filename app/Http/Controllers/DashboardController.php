@@ -15,22 +15,21 @@ class DashboardController extends Controller
 {
     public function admin(): View
     {
-        // Statistik Utama
+        // Statistik dasar
         $stats = [
             'total_pendaftar' => Pendaftaran::count(),
             'terverifikasi' => Pendaftaran::where('status_verifikasi', 'Terverifikasi')->count(),
             'belum_verifikasi' => Pendaftaran::where('status_verifikasi', 'Belum Diverifikasi')->count(),
             'ditolak' => Pendaftaran::where('status_verifikasi', 'Ditolak')->count(),
-            'total_users' => User::count(),
-            'admin_count' => User::where('role', 'admin')->count(),
-            'student_count' => User::where('role', 'student')->count(),
             'diterima' => Pengumuman::where('hasil_seleksi', 'Diterima')->count(),
             'tidak_diterima' => Pengumuman::where('hasil_seleksi', 'Tidak Diterima')->count(),
+            'total_users' => User::count(),
         ];
 
         // Data untuk Chart Pendaftaran per Hari (7 hari terakhir)
         $chartData = [];
         $chartLabels = [];
+
         for ($i = 6; $i >= 0; $i--) {
             $date = Carbon::now()->subDays($i);
             $count = Pendaftaran::whereDate('created_at', $date)->count();
@@ -38,19 +37,7 @@ class DashboardController extends Controller
             $chartLabels[] = $date->format('d M');
         }
 
-        // Pendaftar Terbaru (5 terbaru)
-        $pendaftarTerbaru = Pendaftaran::with('user')
-            ->latest()
-            ->take(5)
-            ->get();
-
-        // Statistik Berkas
-        $berkasStats = [
-            'lengkap' => $this->getBerkasLengkapCount(),
-            'tidak_lengkap' => $this->getBerkasTidakLengkapCount(),
-        ];
-
-        // Data untuk Chart Status Verifikasi
+        // Data untuk Chart Verifikasi
         $verifikasiChart = [
             'labels' => ['Terverifikasi', 'Belum Diverifikasi', 'Ditolak'],
             'data' => [
@@ -61,16 +48,25 @@ class DashboardController extends Controller
             'colors' => ['#28a745', '#ffc107', '#dc3545']
         ];
 
-        // Aktivitas Terbaru
+        // Pendaftar terbaru
+        $pendaftarTerbaru = Pendaftaran::with('user')
+            ->latest()
+            ->limit(8)
+            ->get()
+            ->map(function ($pendaftar) {
+                $pendaftar->status_verifikasi_badge = $this->getStatusBadge($pendaftar->status_verifikasi);
+                return $pendaftar;
+            });
+
+        // Aktivitas terbaru
         $aktivitasTerbaru = $this->getAktivitasTerbaru();
 
         return view('dashboard.dashboard-admin', compact(
             'stats',
             'chartData',
             'chartLabels',
-            'pendaftarTerbaru',
-            'berkasStats',
             'verifikasiChart',
+            'pendaftarTerbaru',
             'aktivitasTerbaru'
         ));
     }
@@ -312,5 +308,18 @@ class DashboardController extends Controller
         }
 
         return $actions;
+    }
+
+    private function getStatusBadge($status)
+    {
+        switch ($status) {
+            case 'Terverifikasi':
+                return 'success';
+            case 'Ditolak':
+                return 'danger';
+            case 'Belum Diverifikasi':
+            default:
+                return 'warning';
+        }
     }
 }
