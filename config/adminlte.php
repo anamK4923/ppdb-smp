@@ -300,22 +300,22 @@ return [
 
     'menu' => [
         // Navbar items:
-        [
-            'type' => 'navbar-notification',
-            'id' => 'my-notification',
-            'icon' => 'fas fa-bell',
-            'icon_color' => 'warning',
-            'label' => 0,
-            'label_color' => 'danger',
-            'url' => 'notifications/show',
-            'topnav_right' => true,
-            'dropdown_mode' => true,
-            'dropdown_flabel' => 'Semua Notifikasi',
-            'update_cfg' => [
-                'url' => 'notifications/get',
-                'period' => 30,
-            ],
-        ],
+        // [
+        //     'type' => 'navbar-notification',
+        //     'id' => 'my-notification',
+        //     'icon' => 'fas fa-bell',
+        //     'icon_color' => 'warning',
+        //     'label' => 0,
+        //     'label_color' => 'danger',
+        //     'url' => 'notifications/show',
+        //     'topnav_right' => true,
+        //     'dropdown_mode' => true,
+        //     'dropdown_flabel' => 'Semua Notifikasi',
+        //     'update_cfg' => [
+        //         'url' => 'notifications/get',
+        //         'period' => 30,
+        //     ],
+        // ],
         [
             'type' => 'fullscreen-widget',
             'topnav_right' => false,
@@ -350,61 +350,68 @@ return [
             'can' => 'admin-only',
         ],
 
-        // Jadwal & Timeline PPDB
         [
-            'text' => 'Jadwal & Timeline PPDB',
-            'icon' => 'fas fa-calendar-alt',
-            'url' => 'admin/jadwal',
+            'text' => 'Kelola User Admin',
+            'icon' => 'fas fa-user-shield',
+            'url' => 'admin/users',
             'can' => 'admin-only',
         ],
+
+        // Jadwal & Timeline PPDB
+        // [
+        //     'text' => 'Jadwal & Timeline PPDB',
+        //     'icon' => 'fas fa-calendar-alt',
+        //     'url' => 'admin/jadwal',
+        //     'can' => 'admin-only',
+        // ],
 
         // Laporan & Statistik
-        [
-            'text' => 'Laporan & Statistik',
-            'icon' => 'fas fa-chart-bar',
-            'submenu' => [
-                [
-                    'text' => 'Export Data Pendaftar',
-                    'icon' => 'fas fa-download',
-                    'url' => 'admin/export',
-                ],
-                [
-                    'text' => 'Log Aktivitas',
-                    'icon' => 'fas fa-history',
-                    'url' => 'admin/log-aktivitas',
-                ],
-                [
-                    'text' => 'Statistik Pendaftaran',
-                    'icon' => 'fas fa-chart-pie',
-                    'url' => 'admin/statistik',
-                ],
-            ],
-            'can' => 'admin-only',
-        ],
+        // [
+        //     'text' => 'Laporan & Statistik',
+        //     'icon' => 'fas fa-chart-bar',
+        //     'submenu' => [
+        //         [
+        //             'text' => 'Export Data Pendaftar',
+        //             'icon' => 'fas fa-download',
+        //             'url' => 'admin/export',
+        //         ],
+        //         [
+        //             'text' => 'Log Aktivitas',
+        //             'icon' => 'fas fa-history',
+        //             'url' => 'admin/log-aktivitas',
+        //         ],
+        //         [
+        //             'text' => 'Statistik Pendaftaran',
+        //             'icon' => 'fas fa-chart-pie',
+        //             'url' => 'admin/statistik',
+        //         ],
+        //     ],
+        //     'can' => 'admin-only',
+        // ],
 
         // Pengaturan Sistem
-        [
-            'text' => 'Pengaturan Sistem',
-            'icon' => 'fas fa-cogs',
-            'submenu' => [
-                [
-                    'text' => 'Kelola User Admin',
-                    'icon' => 'fas fa-user-shield',
-                    'url' => 'admin/user',
-                ],
-                [
-                    'text' => 'Konfigurasi PPDB',
-                    'icon' => 'fas fa-sliders-h',
-                    'url' => 'admin/konfigurasi',
-                ],
-                [
-                    'text' => 'Backup Data',
-                    'icon' => 'fas fa-database',
-                    'url' => 'admin/backup',
-                ],
-            ],
-            'can' => 'admin-only',
-        ],
+        // [
+        //     'text' => 'Pengaturan Sistem',
+        //     'icon' => 'fas fa-cogs',
+        //     'submenu' => [
+        //         [
+        //             'text' => 'Kelola User Admin',
+        //             'icon' => 'fas fa-user-shield',
+        //             'url' => 'admin/users',
+        //         ],
+        //         [
+        //             'text' => 'Konfigurasi PPDB',
+        //             'icon' => 'fas fa-sliders-h',
+        //             'url' => 'admin/konfigurasi',
+        //         ],
+        //         [
+        //             'text' => 'Backup Data',
+        //             'icon' => 'fas fa-database',
+        //             'url' => 'admin/backup',
+        //         ],
+        //     ],
+        //     'can' => 'admin-only',
+        // ],
 
         // ========================================
         // MENU SISWA/STUDENT
