@@ -5,6 +5,7 @@ namespace App\Http\Requests\Auth;
 use Illuminate\Auth\Events\Lockout;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
@@ -41,12 +42,45 @@ class LoginRequest extends FormRequest
     {
         $this->ensureIsNotRateLimited();
 
-        $login = $this->input('email'); // ambil input form 'email' (bisa email atau username)
+        $login = $this->input('email'); // Bisa email, username, atau nisn
+        $password = $this->input('password');
+        $remember = $this->boolean('remember');
 
-        // Tentukan field mana yang akan dipakai untuk login (email atau username)
-        $fieldType = filter_var($login, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+        $fieldType = null;
 
-        if (! Auth::attempt([$fieldType => $login, 'password' => $this->input('password')], $this->boolean('remember'))) {
+        if (filter_var($login, FILTER_VALIDATE_EMAIL)) {
+            $fieldType = 'email';
+        } elseif (\App\Models\User::where('username', $login)->exists()) {
+            $fieldType = 'username';
+        } elseif (\App\Models\User::whereHas('pendaftaran', function ($query) use ($login) {
+            $query->where('nisn', $login);
+        })->exists()) {
+            $fieldType = 'nisn';
+        }
+
+        if ($fieldType === 'email' || $fieldType === 'username') {
+            if (! Auth::attempt([$fieldType => $login, 'password' => $password], $remember)) {
+                RateLimiter::hit($this->throttleKey());
+
+                throw ValidationException::withMessages([
+                    'email' => trans('auth.failed'),
+                ]);
+            }
+        } elseif ($fieldType === 'nisn') {
+            $user = \App\Models\User::whereHas('pendaftaran', function ($query) use ($login) {
+                $query->where('nisn', $login);
+            })->first();
+
+            if (! $user || ! Hash::check($password, $user->password)) {
+                RateLimiter::hit($this->throttleKey());
+
+                throw ValidationException::withMessages([
+                    'email' => trans('auth.failed'),
+                ]);
+            }
+
+            Auth::login($user, $remember);
+        } else {
             RateLimiter::hit($this->throttleKey());
 
             throw ValidationException::withMessages([
@@ -56,7 +90,6 @@ class LoginRequest extends FormRequest
 
         RateLimiter::clear($this->throttleKey());
     }
-
 
     /**
      * Ensure the login request is not rate limited.

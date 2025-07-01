@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Pendaftaran;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
@@ -34,9 +35,10 @@ class RegisteredUserController extends Controller
             'email'         => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
             'username'      => ['required', 'string', 'max:255', 'unique:' . User::class],
             'password'      => ['required', 'confirmed', Rules\Password::defaults()],
-            // 'role'          => ['required', 'in:admin,student'],
+            'nisn'          => ['required', 'string', 'max:255'], // tambahkan validasi nisn
         ]);
 
+        // Buat akun user
         $user = User::create([
             'name'          => $request->name,
             'email'         => $request->email,
@@ -45,17 +47,14 @@ class RegisteredUserController extends Controller
             'role'          => "student",
         ]);
 
+        // Tambahkan data ke tabel pendaftaran
+        Pendaftaran::create([
+            'user_id' => $user->id,
+            'nama'    => $request->name,
+            'nisn'    => $request->nisn,
+        ]);
+
         event(new Registered($user));
-
-
-
-        // Auth::login($user);
-
-        // if ($user->role === 'admin') {
-        //     return redirect()->route('admin.dashboard');
-        // } elseif ($user->role === 'student') {
-        //     return redirect()->route('student.dashboard');
-        // }
 
         return redirect('/login')->with('success', 'Berhasil membuat akun');
     }

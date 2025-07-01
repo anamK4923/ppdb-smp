@@ -1,6 +1,8 @@
 <x-guest-layout title="PPDB - SMP Al-Irsyad | Login" class="bg-gray-100 dark:bg-gray-900">
     <div class="text-center mb-6">
-        <img src="{{ asset('images/logo.png') }}" class="w-16 h-16 mx-auto mb-2" alt="Logo">
+        <a href="{{ url('/') }}">
+            <img src="{{ asset('images/logo.png') }}" class="w-16 h-16 mx-auto mb-2" alt="Logo">
+        </a>
         <h1 class="text-2xl font-bold text-gray-800 dark:text-white">Selamat datang kembali! 👋</h1>
         <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">Silahkan login ke akun anda untuk masuk ke PPDB SMP Al-Irysad</p>
     </div>
@@ -12,8 +14,8 @@
 
         <!-- Email -->
         <div>
-            <input id="email" name="email" type="text" :value="old('email')" required autofocus autocomplete="email"
-                placeholder="Email atau Username"
+            <input id="email" name="email" type="text" :value="old('email')" required autofocus
+                placeholder="NISN atau Username"
                 class="w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white px-4 py-2 mt-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none" />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>

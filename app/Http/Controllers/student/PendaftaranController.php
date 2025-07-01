@@ -97,6 +97,11 @@ class PendaftaranController extends Controller
                 $berkasPendaftaran->update($dataFile);
             }
 
+            if (!$berkasPendaftaran) {
+                $dataFile['id_user'] = $user->id;
+                BerkasPendaftaran::create($dataFile);
+            }
+
             // Jika ada file foto baru, update profile_image di tabel users
             if (isset($dataFile['foto'])) {
                 $user->update([

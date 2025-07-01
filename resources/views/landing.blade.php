@@ -82,9 +82,11 @@
 
             <div class="container">
                 <div class="row justify-content-center" data-aos="zoom-out">
-                    <div class="col-xl-7 col-lg-9 text-center">
-                        <h1>SMP Al-Irsyad Al-Islamiyyah Kota Pekalongan</h1>
-                        <p>"Sekolahnya Calon Para Pemimpin Masa Depan""</p>
+                    <div class="col-xl-9 col-lg-9 text-center">
+                        <h1>sistem Informasi Penerimaan Peserta Didik Baru</h1>
+                        <p>SMP Al-Irsyad Al-Islamiyyah Kota Pekalongan</p>
+                        <!-- <h1>SMP Al-Irsyad Al-Islamiyyah Kota Pekalongan</h1>
+                        <p>"Sekolahnya Calon Para Pemimpin Masa Depan""</p> -->
                     </div>
                 </div>
                 <div class="text-center" data-aos="zoom-out" data-aos-delay="100">

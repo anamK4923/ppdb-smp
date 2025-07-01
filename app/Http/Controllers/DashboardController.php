@@ -13,6 +13,17 @@ use Carbon\Carbon;
 
 class DashboardController extends Controller
 {
+    public function index()
+    {
+        $user = Auth::user();
+
+        if ($user->role === 'admin') {
+            return redirect()->route('admin.dashboard');
+        } elseif ($user->role === 'student') {
+            return redirect()->route('student.dashboard');
+        }
+    }
+
     public function admin(): View
     {
         // Statistik dasar

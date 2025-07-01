@@ -57,7 +57,7 @@
                 @endif
             </div>
 
-            <form action="{{ route('student.pendaftaran.store') }}" method="POST" enctype="multipart/form-data">
+            <form id="formPendaftaran" action="{{ route('student.pendaftaran.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
 
@@ -369,7 +369,7 @@
                 <div class="card-footer">
                     @if(!($pendaftaran && $pendaftaran->status_verifikasi === 'Terverifikasi'))
                     <button type="submit" class="btn btn-primary">
-                        <i class="fas fa-save"></i> {{ $pendaftaran ? 'Update Data' : 'Simpan Data' }}
+                        <i class="fas fa-save"></i> {{ $pendaftaran && $berkasPendaftaran ? 'Update Data' : 'Daftar' }}
                     </button>
                     @endif
                     <a href="{{ route('student.status.index') }}" class="btn btn-info {{ !($pendaftaran && $pendaftaran->status_verifikasi === 'Terverifikasi') ? 'ml-2' : '' }}">
@@ -409,6 +409,44 @@
             this.value = this.value.replace(/[^0-9]/g, '');
             if (this.value.length > 10) {
                 this.value = this.value.slice(0, 10);
+            }
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('formPendaftaran');
+
+        form.addEventListener('submit', function(e) {
+            // Ambil semua input, textarea, select
+            const fields = form.querySelectorAll('input:not([type=hidden]):not([readonly]), textarea:not([readonly]), select:not([disabled])');
+            let isEmpty = false;
+
+            fields.forEach(field => {
+                const type = field.getAttribute('type');
+
+                // Lewati checkbox, radio, karena kamu tidak pakai
+                if (type === 'checkbox' || type === 'radio') return;
+
+                // Jika file input
+                if (type === 'file') {
+                    if (!field.files || field.files.length === 0) {
+                        isEmpty = true;
+                    }
+                } else {
+                    if (!field.value.trim()) {
+                        isEmpty = true;
+                    }
+                }
+            });
+
+            if (isEmpty) {
+                e.preventDefault(); // Cegah submit
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Form Belum Lengkap',
+                    text: 'Harap isi semua kolom sebelum mengirimkan formulir.',
+                    confirmButtonText: 'Oke',
+                });
             }
         });
     });

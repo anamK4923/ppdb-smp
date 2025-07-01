@@ -428,7 +428,7 @@ return [
 
         // Kelola Formulir Pendaftaran
         [
-            'text' => 'Kelola Pendaftaran',
+            'text' => 'Pendaftaran',
             'icon' => 'fas fa-file-download',
             'submenu' => [
                 [
