@@ -92,14 +92,16 @@ class StatusController extends Controller
                 'description' => 'Proses seleksi calon siswa',
                 'icon' => 'fas fa-clipboard-list',
                 'status' => $this->getSelectionStatus($pendaftaran),
-                'date' => null
+                'date' => $pendaftaran && $pendaftaran->updated_at != $pendaftaran->created_at ?
+                    $pendaftaran->updated_at->format('d M Y') : null
             ],
             [
                 'title' => 'Pengumuman Hasil',
                 'description' => 'Pengumuman hasil seleksi',
                 'icon' => 'fas fa-bullhorn',
                 'status' => $this->getAnnouncementStatus($pendaftaran),
-                'date' => null
+                'date' => $pendaftaran && $pendaftaran->updated_at != $pendaftaran->created_at ?
+                    $pendaftaran->updated_at->format('d M Y') : null
             ]
         ];
 
@@ -124,7 +126,7 @@ class StatusController extends Controller
             return 'disabled';
         }
 
-        return match ($pendaftaran->status_seleksi) {
+        return match ($pendaftaran->user->pengumuman->first()?->hasil_seleksi) {
             'Diterima' => 'completed',
             'Tidak Diterima' => 'rejected',
             'Dalam Proses' => 'pending',
@@ -136,7 +138,8 @@ class StatusController extends Controller
     {
         if (!$pendaftaran) return 'disabled';
 
-        if (in_array($pendaftaran->status_seleksi, ['Diterima', 'Tidak Diterima'])) {
+
+        if (in_array($pendaftaran->user->pengumuman->first()?->hasil_seleksi, ['Diterima', 'Tidak Diterima'])) {
             return 'completed';
         }
 
