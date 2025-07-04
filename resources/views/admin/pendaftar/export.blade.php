@@ -17,6 +17,24 @@
             margin-bottom: 20px;
             border-bottom: 3px solid #007bff;
             padding-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .header-content {
+            flex: 1;
+        }
+
+        .header-logo {
+            flex-shrink: 0;
+        }
+
+        .header-logo img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
         }
 
         .header h1 {
@@ -126,7 +144,7 @@
         }
 
         .signature {
-            margin-top: 30px;
+            margin-top: 20px;
             text-align: right;
         }
 
@@ -145,16 +163,45 @@
         .page-break {
             page-break-before: always;
         }
+
+        /* Print-specific styles */
+        @media print {
+            .header {
+                display: flex !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
     </style>
 </head>
 
 <body>
     <!-- Header -->
     <div class="header">
-        <h1>LAPORAN DATA PENDAFTAR</h1>
-        <h2>PENERIMAAN PESERTA DIDIK BARU (PPDB)</h2>
-        <h3>SMP AL-IRSYAD</h3>
-        <h3>TAHUN PELAJARAN {{ date('Y') }}/{{ date('Y') + 1 }}</h3>
+        <div class="header-logo">
+            @php
+            $logoPath = public_path('images/logo.png');
+            $logoExists = file_exists($logoPath);
+            $logoBase64 = $logoExists ? base64_encode(file_get_contents($logoPath)) : null;
+            @endphp
+
+            @if($logoBase64)
+            <img src="data:image/png;base64,{{ $logoBase64 }}" alt="Logo SMP Al-Irsyad">
+            @else
+            <div style="width: 60px; height: 60px; border: 2px dashed #ccc; display: flex; align-items: center; justify-content: center; font-size: 8px; color: #999;">
+                LOGO
+            </div>
+            @endif
+        </div>
+        <div class="header-content">
+            <h1>LAPORAN DATA PENDAFTAR</h1>
+            <h2>PENERIMAAN PESERTA DIDIK BARU (PPDB)</h2>
+            <h3>SMP AL-IRSYAD</h3>
+            <h3>TAHUN PELAJARAN {{ date('Y') }}/{{ date('Y') + 1 }}</h3>
+        </div>
+        <div class="header-logo">
+            <!-- Space for symmetry, you can add another logo or leave empty -->
+        </div>
     </div>
 
     <!-- Info Export -->
